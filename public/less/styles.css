@@ -121,9 +121,30 @@ form button {
   margin: 0;
   font-size: 4.5vw;
 }
+@media all and (min-width: 960px) {
+  #accueil h1 {
+    font-size: 60px;
+  }
+}
+@media all and (max-width: 700px) {
+  #accueil h1 {
+    font-size: 28px;
+  }
+}
 #accueil p {
   margin: 0;
   font-size: 2.8vw;
+  /* Responsive */
+}
+@media all and (min-width: 960px) {
+  #accueil p {
+    font-size: 40px;
+  }
+}
+@media all and (max-width: 700px) {
+  #accueil p {
+    font-size: 20px;
+  }
 }
 /*Adresses*/
 #adresses {
@@ -189,13 +210,18 @@ form button {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  flex-wrap: wrap;
 }
-/* Responsive */
-@media all and (min-width: 960px) {
-  #accueil h1 {
-    font-size: 60px;
+@media all and (max-width: 660px) {
+  .footer {
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-left: 50px;
+    height: auto;
   }
-  #accueil p {
-    font-size: 40px;
+}
+@media all and (max-width: 660px) {
+  .footer ul {
+    margin: 20px;
   }
 }

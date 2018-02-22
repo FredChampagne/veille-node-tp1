@@ -128,10 +128,23 @@ form {
 	h1 {
 		margin: 0;
 		font-size: 4.5vw;
+		@media all and (min-width: 960px) {
+			font-size: 60px;
+		}
+		@media all and (max-width: 700px) {
+			font-size: 28px;
+		}
 	}
 	p {
 		margin: 0;
 		font-size: 2.8vw;
+		/* Responsive */
+		@media all and (min-width: 960px) {
+			font-size: 40px;
+		}
+		@media all and (max-width: 700px) {
+			font-size: 20px;
+		}
 	}
 }
 
@@ -144,6 +157,7 @@ form {
 	.zone-action {
 		display: flex;
 		justify-content: space-between;
+		
 		ul {
 			display: flex;
 			align-items: center;
@@ -201,16 +215,17 @@ form {
     display: flex;
 	justify-content: space-around;
 	align-items: center;
-}
-
-/* Responsive */
-@media all and (min-width: 960px) {
-	#accueil {
-		h1{
-			font-size: 60px;
-		}
-		p {
-			font-size: 40px;
+	flex-wrap: wrap;
+	@media all and (max-width: 660px) {
+		justify-content: flex-start;
+		align-items: flex-start;
+		padding-left: 50px;
+		height: auto;
+	}
+	ul {
+		@media all and (max-width: 660px) {
+			margin: 20px;
 		}
 	}
+
 }
