@@ -33,28 +33,16 @@ app.get('/list', function (req, res) {
 // Traite le formulaire
 app.post('/modifier', function (req, res) {
 	console.log('req.body' + req.body);
-	if (req.body['_id'] != ""){ 
-		console.log('sauvegarde') 
-		var oModif = {
-			"_id": ObjectID(req.body['_id']), 
-			nom: req.body.nom,
-			prenom:req.body.prenom, 
-			telephone:req.body.telephone,
-			courriel:req.body.courriel
-		}
-		var util = require("util");
-		console.log('util = ' + util.inspect(oModif));
-	}
-	else {
-		console.log('insert');
-		console.log(req.body);
-		var oModif = {
+	console.log('sauvegarde') 
+	var oModif = {
+		"_id": ObjectID(req.body['_id']), 
 		nom: req.body.nom,
 		prenom:req.body.prenom, 
 		telephone:req.body.telephone,
-		courriel:req.body.courriel,
-		}
+		courriel:req.body.courriel
 	}
+	var util = require("util");
+	console.log('util = ' + util.inspect(oModif));
 	db.collection('adresse').save(oModif, (err, result) => {
 		if (err) return console.log(err)
 		console.log('sauvegarder dans la BD')
@@ -62,11 +50,17 @@ app.post('/modifier', function (req, res) {
 	})
 });
 
-// Ajoute un membre vide
-app.get('/ajouter/', (req, res) => {
-	db.collection('adresse').save(req.body, (err, result) => {
+// Ajoute un membre
+app.post('/ajouter', (req, res) => {
+	var oNouveau = {
+		nom: req.body.nom,
+		prenom:req.body.prenom, 
+		telephone:req.body.telephone,
+		courriel:req.body.courriel
+	}
+	db.collection('adresse').save(oNouveau, (err, result) => {
 		if (err) return console.log(err)
-		console.log('ajout vide dans la BD')
+		console.log('nouveau membre')
 		res.redirect('/list')
 	})
 });

@@ -10,7 +10,7 @@
 <p><%= membre.courriel %></p>
 
 <form class='form_modif' action="/modifier" name='form_modif' id='form_modif' method="POST" >
-    <input type = "hidden" name = "_id" value = ""> 
+    <input type = "hidden" name = "_id" value = "<%= membre._id %>"> 
     <input type = "text" placeholder="<%= membre.nom %>" name = "nom"> 
     <input type = "text" placeholder="<%= membre.prenom %>" name = "prenom">
     <input type = "text" placeholder="<%= membre.telephone %>" name = "telephone">
