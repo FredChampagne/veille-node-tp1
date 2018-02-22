@@ -20,8 +20,7 @@ app.get('/', function (req, res) {
 
 // Affichage de la liste
 app.get('/list', function (req, res) {
-	let cursor = db.collection('adresse')
-	.find().toArray(function (err, resultat) {
+	let cursor = db.collection('adresse').find().toArray(function (err, resultat) {
 		if (err) return console.log(err)
 		// console.log('util = ' + util.inspect(resultat));
 		// transfert du contenu vers la vue index.ejs (renders)
@@ -30,18 +29,29 @@ app.get('/list', function (req, res) {
 	})
 })
 
+// Accède au profil d'un membre
+app.get('/profil/:id', function (req, res) {
+	let id = req.params.id;
+	let critere = ObjectID(id);
+	let cursor = db.collection('adresse').findOne({"_id": critere}, (err, resultat) => {
+		if (err) return console.log(err)
+		console.log(resultat);
+		res.render('profil.ejs', {membre: resultat});
+	})
+})
+
 // Traite le formulaire
 app.post('/modifier', function (req, res) {
 	console.log('req.body' + req.body);
 	console.log('sauvegarde') 
-	var oModif = {
+	let oModif = {
 		"_id": ObjectID(req.body['_id']), 
 		nom: req.body.nom,
 		prenom:req.body.prenom, 
 		telephone:req.body.telephone,
 		courriel:req.body.courriel
-	}
-	var util = require("util");
+	};
+	let util = require("util");
 	console.log('util = ' + util.inspect(oModif));
 	db.collection('adresse').save(oModif, (err, result) => {
 		if (err) return console.log(err)
@@ -52,7 +62,7 @@ app.post('/modifier', function (req, res) {
 
 // Ajoute un membre
 app.post('/ajouter', (req, res) => {
-	var oNouveau = {
+	let oNouveau = {
 		nom: req.body.nom,
 		prenom:req.body.prenom, 
 		telephone:req.body.telephone,
@@ -67,10 +77,10 @@ app.post('/ajouter', (req, res) => {
 
 // Supprime une adresse
 app.get('/detruire/:id', (req, res) => {
-	var id = req.params.id;
+	let id = req.params.id;
 	//console.log(id);
-	// var critere = ObjectID.createFromHexString(id)
-	var critere = ObjectID(id);
+	// let critere = ObjectID.createFromHexString(id)
+	let critere = ObjectID(id);
 	//console.log(critere);
 	db.collection('adresse').findOneAndDelete({"_id": critere}, (err, resultat) => {
 		if (err) return console.log(err)
@@ -109,7 +119,7 @@ app.get('/vider', (req, res) => {
     });
 })
 
-let db // variable qui contiendra le lien sur la BD
+let db // letiable qui contiendra le lien sur la BD
 // Connection à la BD
 MongoClient.connect('mongodb://127.0.0.1:27017', (err, database) => {
 	if (err) return console.log(err)
