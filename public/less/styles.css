@@ -43,6 +43,17 @@ form button {
   margin-top: 5px;
   display: block;
 }
+.form_ajout,
+.form_modif {
+  width: 450px;
+}
+.form_ajout .deux-colonnes,
+.form_modif .deux-colonnes {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 /*Entete*/
 .entete {
   width: 100%;
@@ -125,14 +136,9 @@ form button {
   min-width: 900px;
   margin-bottom: 40px;
 }
-#adresses .form_ajout {
-  width: 450px;
-}
-#adresses .form_ajout .deux-colonnes {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+/* Profil */
+#profil {
+  min-width: 900px;
 }
 /* Footer */
 .footer {

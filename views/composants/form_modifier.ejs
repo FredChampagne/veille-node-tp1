@@ -21,14 +21,12 @@
             <input type = "text" value="<%= membre.telephone %>" name = "telephone">
         </div>
     </div>
-    <div class="deux-colonnes">
-        <div>
-            <label for="nom"> Courriel </label>
-            <input type = "text" value="<%= membre.courriel %>" name = "courriel">
-        </div>
-        <div class="boutons">
-            <input type="submit" value='Modifier'>
-            <a href="/detruire/<%= membre._id %>">Supprimer</a>
-        </div>
+    <div>
+        <label for="nom"> Courriel </label>
+        <input type = "text" value="<%= membre.courriel %>" name = "courriel">
+    </div>
+    <div class="deux-colonnes boutons">
+        <input type="submit" value='Modifier'>
+        <a href="/detruire/<%= membre._id %>">Supprimer</a>
     </div>
 </form>

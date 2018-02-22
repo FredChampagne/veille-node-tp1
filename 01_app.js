@@ -39,22 +39,19 @@ app.get('/profil/:id', function (req, res) {
 
 // Traite le formulaire
 app.post('/modifier', function (req, res) {
-	console.log('req.body' + req.body);
-	console.log('sauvegarde') 
+	let id = ObjectID(req.body['_id'])
 	let oModif = {
-		"_id": ObjectID(req.body['_id']), 
+		"_id": id, 
 		nom: req.body.nom,
 		prenom:req.body.prenom, 
 		ville:req.body.ville,
 		telephone:req.body.telephone,
 		courriel:req.body.courriel
 	};
-	let util = require("util");
-	console.log('util = ' + util.inspect(oModif));
 	db.collection('adresse').save(oModif, (err, resultat) => {
 		if (err) return console.log(err)
 		console.log('sauvegarder dans la BD')
-		res.redirect('/list')
+		res.redirect('/profil/'+id)
 	})
 });
 
