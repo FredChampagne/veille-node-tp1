@@ -6,6 +6,20 @@ body {
 	align-items: center;
 	flex-direction: column;
 }
+/*Éléments de la page*/
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+a,
+a:visited,
+a:link,
+a:active {
+	text-transform: none;
+	color: black;
+}
 /*Tableau*/
 .tableau {
 		margin: 20px 0;
@@ -16,6 +30,7 @@ body {
 		 	padding : 5px;
 		}
 }
+
 /*Formulaire*/
 form {
 	display: flex;
@@ -37,31 +52,45 @@ form {
 /*Entete*/
 .entete {
 	width: 100%;
-    display: flex;
-    justify-content: space-around;
-	align-items: center;
-	margin-bottom: 20px;
+	height:65px;
+	background-color: #43516C;
 	
-	nav {
-		order: 2;
-		width: 335px;
+	.conteneur-entete {
+		height: 100%;
+		width: 85%;
+		margin:auto;
 		display: flex;
-		justify-content: space-around;
-
-		svg {
-			margin-right: 5px;
-		}
-	}
-
-	section {
-		display: flex;
+		justify-content: space-between;
 		align-items: center;
-	
-		h1 {
-			display: inline-block;
-			font-size: 21px;
-			margin: 0;
-			margin-left: 20px;
+
+		nav {
+			ul {
+				display: flex;
+				justify-content: space-between;
+				
+				li:first-child {
+					margin-right: 20px;
+				}
+				a {
+					color: white;
+				}
+			}
+
+			svg {
+				margin-right: 5px;
+			}
+		}
+
+		.titre {
+			display: flex;
+			align-items: center;
+
+			h1 {
+				display: inline-block;
+				font-size: 30px;
+				margin: 0;
+				color: white;
+			}
 		}
 	}
 }
