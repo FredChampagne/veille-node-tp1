@@ -43,6 +43,9 @@ a:active {
 .conteneur-tableau .tableau tr:nth-child(even) {
   background-color: #f2f2f2;
 }
+.conteneur-tableau .tableau td:first-child {
+  text-align: center;
+}
 .conteneur-tableau .tableau td,
 .conteneur-tableau .tableau th {
   border: 1px solid #aaa;
