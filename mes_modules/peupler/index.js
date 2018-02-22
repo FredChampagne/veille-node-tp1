@@ -3,7 +3,6 @@ const oTableaux = require('./tableaux.js');
 // Peuple une liste de membres aléatoirement.
 const peupler_json = () => {
     let listeMembres = []
-    let position;
 	for(let i=0 ; i<15; i++) {
         // Génère un numéro de téléphone complet et réaliste
         let noTel = "-";
@@ -18,6 +17,7 @@ const peupler_json = () => {
         let unMembre = {};
         unMembre.nom = oTableaux.tabNom[genere_NbAleatoire(oTableaux.tabNom.length)];
         unMembre.prenom = oTableaux.tabPrenom[genere_NbAleatoire(oTableaux.tabPrenom.length)];
+        unMembre.ville = oTableaux.tabVille[genere_NbAleatoire(oTableaux.tabVille.length)];
         unMembre.telephone  = oTableaux.tabIndicatif[genere_NbAleatoire(oTableaux.tabIndicatif.length)] + noTel;
         unMembre.courriel = unMembre.nom + "." + unMembre.prenom + "@" + oTableaux.tabDomaine[genere_NbAleatoire(oTableaux.tabDomaine.length)];
         // Formatage du courriel

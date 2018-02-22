@@ -1,14 +1,23 @@
 <h1>Profil du membre</h1>
 
-<p><%= membre.prenom %> <%= membre.nom %></br>
-<%= membre.courriel %></br>
-<%= membre.telephone %></p>
+<p>
+    <i class="fas fa-user"></i><%= membre.prenom %> <%= membre.nom %></br>
+    <i class="fas fa-map-marker"></i><%= membre.ville %></br>
+    <i class="fas fa-envelope"></i><%= membre.courriel %></br>
+    <i class="fas fa-phone"></i><%= membre.telephone %>
+</p>
 
 <form class='form_modif' action="/modifier" name='form_modif' id='form_modif' method="POST" >
     <input type = "hidden" name = "_id" value = "<%= membre._id %>"> 
-    <input type = "text" placeholder="<%= membre.nom %>" name = "nom"> 
+    <label for="nom"> Nom </label>
+    <input type = "text" placeholder="<%= membre.nom %>" name = "nom">
+    <label for="nom"> Prénom </label>
     <input type = "text" placeholder="<%= membre.prenom %>" name = "prenom">
+    <label for="nom"> Ville </label>
+    <input type = "text" placeholder="<%= membre.ville %>" name = "ville">
+    <label for="nom"> Téléphone </label>
     <input type = "text" placeholder="<%= membre.telephone %>" name = "telephone">
+    <label for="nom"> Courriel </label>
     <input type = "text" placeholder="<%= membre.courriel %>" name = "courriel">
     <input type="submit" value='Modifier'>
     <a href="/detruire/<%= membre._id %>">Supprimer</a>

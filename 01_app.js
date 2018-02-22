@@ -22,9 +22,6 @@ app.get('/', function (req, res) {
 app.get('/list', function (req, res) {
 	let cursor = db.collection('adresse').find().toArray((err, resultat) => {
 		if (err) return console.log(err)
-		// console.log('util = ' + util.inspect(resultat));
-		// transfert du contenu vers la vue index.ejs (renders)
-		// affiche le contenu de la BD
 		res.render('adresses.ejs', { adresses: resultat })
 	})
 })
@@ -53,7 +50,7 @@ app.post('/modifier', function (req, res) {
 	};
 	let util = require("util");
 	console.log('util = ' + util.inspect(oModif));
-	db.collection('adresse').save(oModif, (err, result) => {
+	db.collection('adresse').save(oModif, (err, resultat) => {
 		if (err) return console.log(err)
 		console.log('sauvegarder dans la BD')
 		res.redirect('/list')
@@ -68,7 +65,7 @@ app.post('/ajouter', (req, res) => {
 		telephone:req.body.telephone,
 		courriel:req.body.courriel
 	}
-	db.collection('adresse').save(oNouveau, (err, result) => {
+	db.collection('adresse').save(oNouveau, (err, resultat) => {
 		if (err) return console.log(err)
 		console.log('nouveau membre')
 		res.redirect('/list')
@@ -124,7 +121,6 @@ app.get('/peupler', function (req, res) {
     let listeMembres = peupler();
     db.collection('adresse').insert(listeMembres, (err, resultat) => {
 		if (err) return console.log(err)
-		console.log(listeMembres);
 		listeMembres = [];
         res.redirect('/list');
     });

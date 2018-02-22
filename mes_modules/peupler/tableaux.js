@@ -28,6 +28,17 @@ let oTableaux = {
         "Natasha",
         "Benoit"
     ],
+    tabVille : [
+        "Laval",
+        "Montréal",
+        "Québec",
+        "Saint-Jérôme",
+        "Longueuil",
+        "Terrebonne",
+        "Rivière-du-loup",
+        "Trois-Rivères",
+        "Brossard"
+    ],
     tabIndicatif : [
         "514",
         "450",
