@@ -32,12 +32,11 @@ app.get('/profil/:id', function (req, res) {
 	let critere = ObjectID(id);
 	let cursor = db.collection('adresse').findOne({"_id": critere}, (err, resultat) => {
 		if (err) return console.log(err)
-		console.log(resultat);
 		res.render('profil.ejs', {membre: resultat});
 	})
 })
 
-// Traite le formulaire
+// Modifie un membre et l'affiche
 app.post('/modifier', function (req, res) {
 	let id = ObjectID(req.body['_id'])
 	let oModif = {
@@ -71,11 +70,10 @@ app.post('/ajouter', (req, res) => {
 	})
 });
 
-// Rechercher un membre
+// Recherche un membre
 app.post('/rechercher', (req, res) => {
 	let chaine = req.body.chaine;
 	let critere = {$regex : ".*"+ chaine +".*"}
-	console.log(chaine);
 	let cursor = db.collection('adresse').find({ 
 		$or: [ 
 			{ "nom": critere }, 
@@ -85,7 +83,6 @@ app.post('/rechercher', (req, res) => {
 		]
 	}).toArray((err, resultat) => {
 		if (err) return console.log(err)
-		console.log(resultat);
 		res.render('adresses.ejs', {adresses: resultat});
 	})
 });
@@ -93,10 +90,7 @@ app.post('/rechercher', (req, res) => {
 // Supprime une adresse
 app.get('/detruire/:id', (req, res) => {
 	let id = req.params.id;
-	//console.log(id);
-	// let critere = ObjectID.createFromHexString(id)
 	let critere = ObjectID(id);
-	//console.log(critere);
 	db.collection('adresse').findOneAndDelete({"_id": critere}, (err, resultat) => {
 		if (err) return console.log(err)
 		res.redirect('/list');
@@ -107,14 +101,13 @@ app.get('/detruire/:id', (req, res) => {
 app.get('/trier/:cle/:ordre', (req, res) => {
 	let cle = req.params.cle
 	let ordre = (req.params.ordre == 'asc' ? 1 : -1)
-	console.log(ordre);
 	let cursor = db.collection('adresse').find().sort(cle,ordre).toArray(function(err, resultat){
 	ordre = (ordre == 1 ? "desc" : "asc");
 	res.render('adresses.ejs', {adresses: resultat, ordre:ordre, cle:cle})
 	});
 });
 
-// Peupler la base de données de membres
+// Peuple la base de données de membres
 app.get('/peupler', function (req, res) {
 	let peupler = require('./mes_modules/peupler/');
     let listeMembres = peupler();

@@ -31,7 +31,7 @@ const peupler_json = () => {
 }
 // Fonction qui génère un nombre aléatoire
 // @param {number} max Chiffre maximum pouvant être généré
-let genere_NbAleatoire = (max) => {
+const genere_NbAleatoire = (max) => {
     return Math.floor(Math.random()*max)
 }
 
