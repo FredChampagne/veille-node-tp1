@@ -1,7 +1,7 @@
 "use strict";
 // Tableau contenant des noms, prénoms, indicateurs et domaines
 // afin de générer des membres
-let tableau = {
+let oTableaux = {
     tabNom : [
         "Champagne",
         "Lamardin",
@@ -47,4 +47,4 @@ let tableau = {
 
 }
 
-module.exports = tableau;
+module.exports = oTableaux;

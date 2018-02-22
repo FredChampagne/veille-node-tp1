@@ -1,5 +1,5 @@
 "use strict"
-const tableau = require('./tableaux.js');
+const oTableaux = require('./tableaux.js');
 // Peuple une liste de membres aléatoirement.
 const peupler_json = () => {
     let listeMembres = []
@@ -16,10 +16,10 @@ const peupler_json = () => {
         }
         // Crée le membre
         let unMembre = {};
-        unMembre.nom = tableau.tabNom[genere_NbAleatoire(tableau.tabNom.length)];
-        unMembre.prenom = tableau.tabPrenom[genere_NbAleatoire(tableau.tabPrenom.length)];
-        unMembre.telephone  = tableau.tabIndicatif[genere_NbAleatoire(tableau.tabIndicatif.length)] + noTel;
-        unMembre.courriel = unMembre.nom + "." + unMembre.prenom + "@" + tableau.tabDomaine[genere_NbAleatoire(tableau.tabDomaine.length)];
+        unMembre.nom = oTableaux.tabNom[genere_NbAleatoire(oTableaux.tabNom.length)];
+        unMembre.prenom = oTableaux.tabPrenom[genere_NbAleatoire(oTableaux.tabPrenom.length)];
+        unMembre.telephone  = oTableaux.tabIndicatif[genere_NbAleatoire(oTableaux.tabIndicatif.length)] + noTel;
+        unMembre.courriel = unMembre.nom + "." + unMembre.prenom + "@" + oTableaux.tabDomaine[genere_NbAleatoire(oTableaux.tabDomaine.length)];
         // Formatage du courriel
         unMembre.courriel = unMembre.courriel.toLowerCase();
         unMembre.courriel = unMembre.courriel.normalize('NFD').replace(/[\u0300-\u036f]/g, "");

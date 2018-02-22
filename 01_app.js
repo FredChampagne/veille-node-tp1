@@ -75,6 +75,18 @@ app.post('/ajouter', (req, res) => {
 	})
 });
 
+// Rechercher un membre
+app.post('/rechercher', (req, res) => {
+	let chaine = req.body.chaine;
+	let critere = {$regex : ".*"+ chaine +".*"}
+	console.log(chaine);
+	let cursor = db.collection('adresse').findOne({ $or: [ { "nom": critere }, { "prenom": critere }, { "telephone": critere }, { "courriel": critere } ] }, (err, resultat) => {
+		if (err) return console.log(err)
+		console.log(resultat);
+		res.render('adresses.ejs', {adresses: resultat});
+	})
+});
+
 // Supprime une adresse
 app.get('/detruire/:id', (req, res) => {
 	let id = req.params.id;
