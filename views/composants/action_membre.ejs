@@ -1,0 +1,20 @@
+<h1>Profil du membre</h1>
+
+<h2>Nom</h2>
+<p><%= membre.nom %></p>
+<h2>Prénom</h2>
+<p><%= membre.prenom %></p>
+<h2>Téléphone</h2>
+<p><%= membre.telephone %></p>
+<h2>Courriel</h2>
+<p><%= membre.courriel %></p>
+
+<form class='form_modif' action="/modifier" name='form_modif' id='form_modif' method="POST" >
+    <input type = "hidden" name = "_id" value = ""> 
+    <input type = "text" placeholder="<%= membre.nom %>" name = "nom"> 
+    <input type = "text" placeholder="<%= membre.prenom %>" name = "prenom">
+    <input type = "text" placeholder="<%= membre.telephone %>" name = "telephone">
+    <input type = "text" placeholder="<%= membre.courriel %>" name = "courriel">
+    <input type="submit" value='Modifier'>
+    <a href="/detruire/<%= membre._id %>">Supprimer</a>
+</form>
