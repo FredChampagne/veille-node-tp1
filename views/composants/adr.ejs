@@ -6,6 +6,10 @@ if(typeof ordre != 'undefined'){
       tri = 'asc';
     }
 %> 
+<ul>
+    <li><a href='/vider'><i class="fa fa-industry" aria-hidden="true"></i>Vider la liste</a></li>
+    <li><a href='/peupler'><i class="fa fa-keyboard-o" aria-hidden="true"></i>Peupler la liste</a></li>
+</ul>
 <table class="tableau">
     <tr>
         <th><a href='/trier/id/<%= tri %>'>ID</a></th>
@@ -22,6 +26,7 @@ if(typeof ordre != 'undefined'){
             <td contenteditable='true'><%= elm.prenom %></td>
             <td contenteditable='true'><%= elm.telephone %></td>
             <td contenteditable='true'><%= elm.courriel %></td>
+            <td><a href="/profil/<%= elm.id %>">Modifier</a></td>
             <td><a href="/detruire/<%= elm._id %>">Detruire</a></td>
             <td><a class='sauver' href="#">Sauver</a></td>
         </tr>
