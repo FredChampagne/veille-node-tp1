@@ -13,7 +13,10 @@ let oTableaux = {
         "Labalé",
         "Teriot",
         "Précalia",
-        "Wiston"
+        "Wiston",
+        "Crouteau",
+        "Gesy",
+        "Lortie"
     ],
     tabPrenom : [
         "Frédéric",
@@ -26,7 +29,10 @@ let oTableaux = {
         "Rebecca",
         "Natalie",
         "Natasha",
-        "Benoit"
+        "Benoit",
+        "Danielle",
+        "Maxime",
+        "Sarah"
     ],
     tabVille : [
         "Laval",
