@@ -1,8 +1,12 @@
 <%- include('composants/head') %> 
 <body>
  <%- include('composants/entete') %>
- <%- include('composants/adr') %>
- <%- include('composants/form_post') %>
+ <main id="adresses">
+    <h1>Liste des membres</h1>
+    <%- include('composants/actions_adr') %>
+    <%- include('composants/tableau_adr') %>
+    <%- include('composants/form_ajouter') %>
+</main>
  <%- include('composants/footer') %>
 </body>
 </html>

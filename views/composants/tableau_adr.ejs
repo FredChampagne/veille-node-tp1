@@ -6,14 +6,6 @@ if(typeof ordre != 'undefined'){
       tri = 'asc';
     }
 %> 
-<ul>
-    <li><a href='/vider'><i class="fa fa-industry" aria-hidden="true"></i>Vider la liste</a></li>
-    <li><a href='/peupler'><i class="fa fa-keyboard-o" aria-hidden="true"></i>Peupler la liste</a></li>
-</ul>
-<form class='form_recherche' action="/rechercher" name='form_recherche' id='form_recherche' method="POST" >
-    <i class="fa fa-search" aria-hidden="true"></i><input type="text" name="chaine" placeholder="Rechercher un membre">
-    <input type="submit" value="Rechercher">
-</form>
 <table class="tableau">
     <tr>
         <th>Profil</th>
@@ -21,6 +13,7 @@ if(typeof ordre != 'undefined'){
         <th><a href='/trier/nom/<%= tri %>'>Nom</a></th> 
         <th><a href='/trier/telephone/<%= tri %>'>Telephone</a></th>
         <th><a href='/trier/courriel/<%= tri %>'>Courriel</a></th>
+        <th><a href='/trier/id/<%= tri %>'>ID</a></th>
     </tr>
     <% adresses.forEach(elm => {%>
         <tr>
@@ -29,6 +22,7 @@ if(typeof ordre != 'undefined'){
             <td><%= elm.nom %></td>
             <td><%= elm.telephone %></td>
             <td><%= elm.courriel %></td>
+            <td><%= elm._id %></td>
         </tr>
     <% }) %>
 </table>

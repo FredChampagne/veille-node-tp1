@@ -1,3 +1,6 @@
+@hauteurEntete : 65px;
+@hauteurFooter : 115px;
+
 /*Ensemble de la page*/
 body {
 	min-height: 100vh;
@@ -52,7 +55,7 @@ form {
 /*Entete*/
 .entete {
 	width: 100%;
-	height:65px;
+	height: @hauteurEntete;
 	background-color: #43516C;
 	
 	.conteneur-entete {
@@ -72,6 +75,7 @@ form {
 					margin-right: 20px;
 				}
 				a {
+					font-size: 20px;
 					color: white;
 				}
 			}
@@ -95,10 +99,72 @@ form {
 	}
 }
 
+/*Accueil*/
+#accueil {
+	height: calc(100vh ~"-" @hauteurEntete ~"-" @hauteurFooter);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+
+	h1 {
+		margin: 0;
+		font-size: 4.5vw;
+	}
+	p {
+		margin: 0;
+		font-size: 2.8vw;
+	}
+}
+
+/*Adresses*/
+#adresses {
+	padding: 30px 0;
+	.zone-action {
+		display: flex;
+		justify-content: space-between;
+
+		ul {
+			display: flex;
+			align-items: center;
+			li:first-child {
+				margin-right: 20px;
+			}
+
+			li a svg{
+				margin-right: 10px;
+			}
+		}
+
+		form {
+			flex-direction: row;
+		}
+	}
+
+	.tableau {
+		min-width: 900px;
+	}
+
+}
+
 /* Footer */
 .footer {
-	margin: 10px 0 20px;
+	height: @hauteurFooter;
 	width: 100%;
+	background-color: #e5e8c7;
     display: flex;
-    justify-content: space-around;
+	justify-content: space-around;
+	align-items: center;
+}
+
+/* Responsive */
+@media all and (min-width: 960px) {
+	#accueil {
+		h1{
+			font-size: 60px;
+		}
+		p {
+			font-size: 40px;
+		}
+	}
 }

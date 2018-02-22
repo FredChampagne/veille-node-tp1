@@ -67,6 +67,7 @@ form button {
   margin-right: 20px;
 }
 .entete .conteneur-entete nav ul a {
+  font-size: 20px;
   color: white;
 }
 .entete .conteneur-entete nav svg {
@@ -82,10 +83,61 @@ form button {
   margin: 0;
   color: white;
 }
+/*Accueil*/
+#accueil {
+  height: calc(100vh - 65px - 115px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#accueil h1 {
+  margin: 0;
+  font-size: 4.5vw;
+}
+#accueil p {
+  margin: 0;
+  font-size: 2.8vw;
+}
+/*Adresses*/
+#adresses {
+  padding: 30px 0;
+}
+#adresses .zone-action {
+  display: flex;
+  justify-content: space-between;
+}
+#adresses .zone-action ul {
+  display: flex;
+  align-items: center;
+}
+#adresses .zone-action ul li:first-child {
+  margin-right: 20px;
+}
+#adresses .zone-action ul li a svg {
+  margin-right: 10px;
+}
+#adresses .zone-action form {
+  flex-direction: row;
+}
+#adresses .tableau {
+  min-width: 900px;
+}
 /* Footer */
 .footer {
-  margin: 10px 0 20px;
+  height: 115px;
   width: 100%;
+  background-color: #e5e8c7;
   display: flex;
   justify-content: space-around;
+  align-items: center;
+}
+/* Responsive */
+@media all and (min-width: 960px) {
+  #accueil h1 {
+    font-size: 60px;
+  }
+  #accueil p {
+    font-size: 40px;
+  }
 }
