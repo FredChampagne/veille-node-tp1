@@ -123,6 +123,12 @@ form button {
 #adresses .tableau {
   min-width: 900px;
 }
+#adresses .form_ajout .deux-colonnes {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 /* Footer */
 .footer {
   height: 115px;

@@ -2,20 +2,32 @@
 <form class='form_ajout' action="/ajouter" name='form_ajout' id='form_ajout' method="POST" >
     <input type = "hidden" name = "_id" value = ""> 
     <div class="deux-colonnes">
-        <label for="prenom">Prénom :*</label>
-        <input type = "text" placeholder="Prénom" name = "prenom" required>
-        <label for="nom">Nom :*</label>
-        <input type = "text" placeholder="Nom" name = "nom" required> 
+        <div>
+            <label for="prenom">Prénom :*</label>
+            <input type = "text" placeholder="Prénom" name = "prenom" required>
+        </div>
+        <div>
+            <label for="nom">Nom :*</label>
+            <input type = "text" placeholder="Nom" name = "nom" required> 
+        </div>
     </div>
     <div class="deux-colonnes">
-        <label for="ville">Ville :</label>
-        <input type = "text" placeholder="Ville" name = "ville">
-        <label for="nom">Téléphone :</label>
-        <input type = "text" placeholder="Téléphone" name = "telephone">
+        <div>
+            <label for="ville">Ville :</label>
+            <input type = "text" placeholder="Ville" name = "ville">
+        </div>
+        <div>
+            <label for="nom">Téléphone :</label>
+            <input type = "text" placeholder="Téléphone" name = "telephone">
+        </div>
     </div>
     <div class="deux-colonnes">
-        <label for="nom">Courriel :</label>
-        <input type = "text" placeholder="Courriel" name = "courriel">
-        <input type="submit" value='Ajouter'>
+        <div>
+            <label for="nom">Courriel :</label>
+            <input type = "text" placeholder="Courriel" name = "courriel">
+        </div>
+        <div>
+            <input type="submit" value='Ajouter'>
+        </div>
     </div>
 </form>
