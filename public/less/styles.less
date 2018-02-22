@@ -4,7 +4,6 @@
 
 /*Ensemble de la page*/
 body {
-	min-height: 100vh;
 	font-family : arial;
 	display: flex;
 	align-items: center;
@@ -71,6 +70,13 @@ form {
 		justify-content: space-between;
 		align-items: center;
 	}
+	.deux-colonnes.boutons {
+		margin-top: 20px;
+		justify-content: flex-start;
+		.bouton:first-child {
+			margin-right: 35px;
+		}
+	}
 }
 
 /*Entete*/
@@ -118,11 +124,7 @@ form {
 
 /*Accueil*/
 #accueil {
-	height: calc(100vh ~"-" @hauteurEntete ~"-" @hauteurFooter);
-	display: flex;
-	justify-content: center;
 	align-items: center;
-	flex-direction: column;
 	h1 {
 		margin: 0;
 		font-size: 4.5vw;
@@ -170,6 +172,7 @@ form {
 		display: table;
 		padding: 15px;
 		border: 1px dotted darkgray;
+		margin-bottom: 50px;
 		p {
 			font-size: 20px;
 			margin: 0;
@@ -180,6 +183,14 @@ form {
 			}
 		}
 	}
+}
+
+/* Toutes les pages */
+#accueil,#adresses,#profil {
+	min-height: calc(100vh ~"-" @hauteurEntete ~"-" @hauteurFooter);
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
 }
 
 /* Footer */

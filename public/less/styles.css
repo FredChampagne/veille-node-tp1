@@ -1,7 +1,6 @@
 /*Variables*/
 /*Ensemble de la page*/
 body {
-  min-height: 100vh;
   font-family: arial;
   display: flex;
   align-items: center;
@@ -67,6 +66,15 @@ form button {
   justify-content: space-between;
   align-items: center;
 }
+.form_ajout .deux-colonnes.boutons,
+.form_modif .deux-colonnes.boutons {
+  margin-top: 20px;
+  justify-content: flex-start;
+}
+.form_ajout .deux-colonnes.boutons .bouton:first-child,
+.form_modif .deux-colonnes.boutons .bouton:first-child {
+  margin-right: 35px;
+}
 /*Entete*/
 .entete {
   width: 100%;
@@ -107,11 +115,7 @@ form button {
 }
 /*Accueil*/
 #accueil {
-  height: calc(100vh - 65px - 115px);
-  display: flex;
-  justify-content: center;
   align-items: center;
-  flex-direction: column;
 }
 #accueil h1 {
   margin: 0;
@@ -157,6 +161,7 @@ form button {
   display: table;
   padding: 15px;
   border: 1px dotted darkgray;
+  margin-bottom: 50px;
 }
 #profil .info-membre p {
   font-size: 20px;
@@ -166,6 +171,15 @@ form button {
 #profil .info-membre p svg {
   width: 30px;
   margin-right: 10px;
+}
+/* Toutes les pages */
+#accueil,
+#adresses,
+#profil {
+  min-height: calc(100vh - 65px - 115px);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 /* Footer */
 .footer {
