@@ -10,9 +10,9 @@ if(typeof ordre != 'undefined'){
     <li><a href='/vider'><i class="fa fa-industry" aria-hidden="true"></i>Vider la liste</a></li>
     <li><a href='/peupler'><i class="fa fa-keyboard-o" aria-hidden="true"></i>Peupler la liste</a></li>
 </ul>
-<h4>Cliquez sur le prénom ou le nom d'un membre pour pouvoir le modifier</h4>
 <table class="tableau">
     <tr>
+        <th>Profil</th>
         <th><a href='/trier/prenom/<%= tri %>'>Prenom</a></th>
         <th><a href='/trier/nom/<%= tri %>'>Nom</a></th> 
         <th><a href='/trier/telephone/<%= tri %>'>Telephone</a></th>
@@ -21,8 +21,9 @@ if(typeof ordre != 'undefined'){
     </tr>
     <% adresses.forEach(elm => {%>
         <tr>
-            <td><a href="/profil/<%= elm._id %>"><%= elm.prenom %></a></td>
-            <td><a href="/profil/<%= elm._id %>"><%= elm.nom %></a></td>
+            <td><a href="/profil/<%= elm._id %>"><i class="fas fa-user"></i></a></td>
+            <td><%= elm.prenom %></td>
+            <td><%= elm.nom %></td>
             <td><%= elm.telephone %></td>
             <td><%= elm.courriel %></td>
             <td><%= elm._id %></td>
