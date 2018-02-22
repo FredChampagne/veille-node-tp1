@@ -20,7 +20,7 @@ app.get('/', function (req, res) {
 
 // Affichage de la liste
 app.get('/list', function (req, res) {
-	let cursor = db.collection('adresse').find().toArray(function (err, resultat) {
+	let cursor = db.collection('adresse').find().toArray((err, resultat) => {
 		if (err) return console.log(err)
 		// console.log('util = ' + util.inspect(resultat));
 		// transfert du contenu vers la vue index.ejs (renders)
@@ -80,7 +80,14 @@ app.post('/rechercher', (req, res) => {
 	let chaine = req.body.chaine;
 	let critere = {$regex : ".*"+ chaine +".*"}
 	console.log(chaine);
-	let cursor = db.collection('adresse').findOne({ $or: [ { "nom": critere }, { "prenom": critere }, { "telephone": critere }, { "courriel": critere } ] }, (err, resultat) => {
+	let cursor = db.collection('adresse').find({ 
+		$or: [ 
+			{ "nom": critere }, 
+			{ "prenom": critere }, 
+			{ "telephone": critere }, 
+			{ "courriel": critere } 
+		]
+	}).toArray((err, resultat) => {
 		if (err) return console.log(err)
 		console.log(resultat);
 		res.render('adresses.ejs', {adresses: resultat});
