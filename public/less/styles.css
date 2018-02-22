@@ -1,3 +1,4 @@
+/*Variables*/
 /*Ensemble de la page*/
 body {
   min-height: 100vh;
@@ -29,7 +30,7 @@ a:active {
   border: 1px solid #aaa;
   padding: 5px;
 }
-/*Formulaire*/
+/*Formulaires*/
 form {
   display: flex;
   flex-direction: column;
@@ -139,6 +140,20 @@ form button {
 /* Profil */
 #profil {
   min-width: 900px;
+}
+#profil .info-membre {
+  display: table;
+  padding: 15px;
+  border: 1px dotted darkgray;
+}
+#profil .info-membre p {
+  font-size: 20px;
+  margin: 0;
+  line-height: 150%;
+}
+#profil .info-membre p svg {
+  width: 30px;
+  margin-right: 10px;
 }
 /* Footer */
 .footer {
