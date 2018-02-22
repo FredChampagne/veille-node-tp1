@@ -21,13 +21,12 @@ if(typeof ordre != 'undefined'){
     <% adresses.forEach(elm => {%>
         <tr>
             <td><%= elm._id %></td>
-            <td contenteditable='true'><%= elm.nom %></td>
-            <td contenteditable='true'><%= elm.prenom %></td>
-            <td contenteditable='true'><%= elm.telephone %></td>
-            <td contenteditable='true'><%= elm.courriel %></td>
+            <td><%= elm.nom %></td>
+            <td><%= elm.prenom %></td>
+            <td><%= elm.telephone %></td>
+            <td><%= elm.courriel %></td>
             <td><a href="/profil/<%= elm._id %>">Modifier</a></td>
             <td><a href="/detruire/<%= elm._id %>">Detruire</a></td>
-            <td><a class='sauver' href="#">Sauver</a></td>
         </tr>
     <% }) %>
 </table>
