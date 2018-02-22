@@ -2,8 +2,12 @@
 <div class="info-membre">
     <p>
         <i class="fas fa-user"></i><%= membre.prenom %> <%= membre.nom %></br>
+        <% if(membre.ville != "") { %>
         <i class="fas fa-map-marker"></i><%= membre.ville %></br>
+        <% } if(membre.courriel != "") { %>
         <i class="fas fa-envelope"></i><%= membre.courriel %></br>
+        <% } if(membre.telephone != "") { %>
         <i class="fas fa-phone"></i><%= membre.telephone %>
+        <% } %>
     </p>
 </div>

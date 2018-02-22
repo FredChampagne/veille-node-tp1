@@ -33,8 +33,6 @@ a:active {
 form {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 form input {
   display: block;
@@ -67,7 +65,7 @@ form button {
   margin-right: 20px;
 }
 .entete .conteneur-entete nav ul a {
-  font-size: 20px;
+  font-size: 18px;
   color: white;
 }
 .entete .conteneur-entete nav svg {
@@ -103,6 +101,9 @@ form button {
 #adresses {
   padding: 30px 0;
 }
+#adresses h1 {
+  margin-top: 0;
+}
 #adresses .zone-action {
   display: flex;
   justify-content: space-between;
@@ -122,6 +123,10 @@ form button {
 }
 #adresses .tableau {
   min-width: 900px;
+  margin-bottom: 40px;
+}
+#adresses .form_ajout {
+  width: 450px;
 }
 #adresses .form_ajout .deux-colonnes {
   width: 100%;
