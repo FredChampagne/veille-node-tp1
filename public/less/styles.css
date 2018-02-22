@@ -20,6 +20,18 @@ a:active {
   text-transform: none;
   color: black;
 }
+.bouton {
+  background: none;
+  background-color: white;
+  text-decoration: none;
+  border: 1px solid black;
+  padding: 10px;
+  transition: all 0.3s ease;
+}
+.bouton:hover {
+  background-color: #222222;
+  color: white;
+}
 /*Tableau*/
 .tableau {
   margin: 20px 0;
