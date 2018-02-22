@@ -45,6 +45,7 @@ app.post('/modifier', function (req, res) {
 		"_id": ObjectID(req.body['_id']), 
 		nom: req.body.nom,
 		prenom:req.body.prenom, 
+		ville:req.body.ville,
 		telephone:req.body.telephone,
 		courriel:req.body.courriel
 	};
@@ -62,6 +63,7 @@ app.post('/ajouter', (req, res) => {
 	let oNouveau = {
 		nom: req.body.nom,
 		prenom:req.body.prenom, 
+		ville:req.body.ville,
 		telephone:req.body.telephone,
 		courriel:req.body.courriel
 	}
